@@ -33,8 +33,8 @@ classification:
 sources:
   - title: "A computable transcendental number without eventually greedy best Egyptian underapproximations"
     authors: ["Yuhang Shi"]
-    id: "doi:10.5281/zenodo.23282407"
-    location: "https://doi.org/10.5281/zenodo.23282407"
+    id: "doi:10.5281/zenodo.23283007"
+    location: "https://doi.org/10.5281/zenodo.23283007"
     type: "paper"
     relationship: "formalizes"
     note: >-

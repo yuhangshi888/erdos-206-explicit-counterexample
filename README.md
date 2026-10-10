@@ -2,7 +2,7 @@
 
 This repository contains a Lean 4 formalization of a deterministic construction of a transcendental real number whose best Egyptian underapproximations with strictly increasing denominators are not eventually greedy. The main result is the fully instantiated theorem [`Egyptian.explicit_counterexample`](formalization/Egyptian/Main.lean), together with an executable rational approximation algorithm and a proved error bound.
 
-Author: [Yuhang Shi](https://orcid.org/0009-0006-3180-4767), Zhengzhou University. This code repository contains the formalization and exact finite illustration. The paper is distributed separately on Zenodo under an all-rights-reserved notice. The associated paper DOI is [10.5281/zenodo.23282407](https://doi.org/10.5281/zenodo.23282407).
+Author: [Yuhang Shi](https://orcid.org/0009-0006-3180-4767), Zhengzhou University. This code repository contains the formalization and exact finite illustration. The paper is distributed separately on Zenodo under an all-rights-reserved notice. The associated paper DOI is [10.5281/zenodo.23283007](https://doi.org/10.5281/zenodo.23283007).
 
 The complete construction and publication bridge have passed the full build under Lean 4.35.0-rc2 and Mathlib commit `065356127b1dc0016f66b7283ce0ce2c4055aa55`. The final axiom and runtime checks also passed.
 

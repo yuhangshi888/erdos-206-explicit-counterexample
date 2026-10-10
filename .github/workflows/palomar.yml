@@ -22,4 +22,4 @@ jobs:
       mode: full
       execution_profile: palomar-standard-v1
       options: >-
-        {"project_path":"formalization","formalization_metadata_path":"formalization.yaml","comparator_config_path":"formalization/comparator.json"}
+        {"project_path":"formalization","formalization_metadata_path":"formalization.yaml","comparator_config_path":"formalization/comparator.json","authorization_relationship":"I am a responsible author or maintainer"}
