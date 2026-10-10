@@ -1,0 +1,161 @@
+# formalization.yaml v0.4
+version: "v0.4"
+
+project:
+  name: "An explicit computable transcendental counterexample for Erdős Problem #206"
+  description: >-
+    A Lean formalization of a deterministic rational nested-interval construction
+    defining a particular transcendental real x in (1/4,1/3). For this x, no
+    strictly increasing infinite sequence of positive integer denominators is
+    optimal among all distinct-denominator strict Egyptian underapproximations
+    at every order from any finite starting order onward. The formalization
+    includes the fully specified terminating construction, all prefix and
+    polynomial enumerations, a total executable rational approximation function,
+    and the error bound |x-q_n| <= 2^(-n-1) for every n >= 0. It also proves
+    attainment of the best finite underapproximation values. The independent
+    Palomar statement quantifies directly over all sequences and all competing
+    positive increasing lists. This is a specific effective example; the
+    measure-zero and prior existence results are not claimed as new.
+  authors:
+    - name: "Yuhang Shi"
+      github: "yuhangshi888"
+      orcid: "0009-0006-3180-4767"
+  license: "AGPL-3.0"
+  responsible_maintainers:
+    - name: "Yuhang Shi"
+      github: "yuhangshi888"
+      orcid: "0009-0006-3180-4767"
+
+classification:
+  arxiv: ["math.NT", "math.LO"]
+  msc2020: ["11D68", "03D78"]
+
+sources:
+  - title: "A computable transcendental number without eventually greedy best Egyptian underapproximations"
+    authors: ["Yuhang Shi"]
+    id: "doi:10.5281/zenodo.23282407"
+    location: "https://doi.org/10.5281/zenodo.23282407"
+    type: "paper"
+    relationship: "formalizes"
+    note: >-
+      The associated manuscript dated 10 October 2026 presents the complete
+      deterministic construction and proofs. It is distributed separately from
+      this code repository. The formalization proves its complete construction,
+      not merely an existential or local obstruction statement.
+    license: "All rights reserved"
+    author_endorsement: "participated"
+  - title: "On eventually greedy best underapproximations by Egyptian fractions"
+    authors: ["Vjekoslav Kovač"]
+    id: "arXiv:2406.07218v3"
+    location: "https://arxiv.org/abs/2406.07218v3"
+    type: "paper"
+    relationship: "adapts"
+    note: >-
+      The notion of eventual greediness and the two-term obstruction family in
+      equation (2.1) are used. The measure-zero theorem and nonconstructive
+      transcendental existence result were already established in this work.
+    author_endorsement: "not-contacted"
+  - title: "Old and New Problems and Results in Combinatorial Number Theory"
+    authors: ["Paul Erdős", "Ronald L. Graham"]
+    location: "https://mathweb.ucsd.edu/~ronspubs/80_11_number_theory.pdf"
+    type: "book"
+    relationship: "background"
+    note: "The passage on page 31 asserts the existence of failing irrational numbers."
+    author_endorsement: "not-contacted"
+  - title: "Effective Choice and Boundedness Principles in Computable Analysis"
+    authors: ["Vasco Brattka", "Guido Gherardi"]
+    id: "doi:10.2178/bsl/1294186663"
+    location: "https://arxiv.org/abs/0905.4685v4"
+    type: "paper"
+    relationship: "background"
+    note: >-
+      Effective Baire-category methods are established background. The present
+      rational recursion and its termination proofs are developed directly,
+      without importing an unformalized effective Baire theorem as an axiom.
+    author_endorsement: "not-contacted"
+  - title: "Eventually greedy best Egyptian underapproximations of rational numbers via optimal control"
+    authors: ["Vjekoslav Kovač", "Q. Tang"]
+    id: "arXiv:2607.28387v2"
+    location: "https://arxiv.org/abs/2607.28387v2"
+    type: "paper"
+    relationship: "background"
+    note: >-
+      The positive rational case is already settled by this work. Its rational
+      theorem is not part of the present formalization.
+    author_endorsement: "not-contacted"
+  - title: "Erdős Problem #206"
+    authors: ["Thomas F. Bloom"]
+    location: "https://erdosproblems.com/206"
+    type: "web post"
+    relationship: "background"
+    note: >-
+      Problem status and explicit-example request checked on 10 October 2026.
+      Acceptance of this algorithmic example by the problem authors or page
+      maintainers is not asserted.
+    author_endorsement: "not-contacted"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Complete deterministic nested-interval construction and its universal
+    negative conclusion for strict underapproximations with distinct positive
+    integer denominators. The real limit uses classical choice in the proof
+    layer; the precision-indexed rational approximation is a total executable
+    definition with a proved bound for every index, including zero. A separate
+    Partrec or Turing-machine representation, computational complexity estimate,
+    measure-zero theorem, and the rational positive case are not supplied.
+    The Challenge has two deliberate definition-value holes and a theorem proof
+    hole; the Solution and substantive construction have no such holes.
+  # These counts cover Solution and the substantive proof development only;
+  # Challenge deliberately has two value interfaces and one theorem proof hole.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: []
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        AI tools assisted with the counterexample construction and its Lean
+        formalization, including implementation and checks. The author is
+        responsible for the stated results and registration.
+
+fidelity:
+  divergences: >-
+    The manuscript uses positive distinct denominators and strict
+    underapproximation. Kovač-Tang require denominators at least 2; on (0,1)
+    this makes no difference. No first-existence, measure-zero novelty, first
+    formalization, or global priority claim is made. The two-term local family
+    is adapted from Kovač and the effective diagonal method is established.
+
+review:
+  status: "agent-reviewed"
+  notes: >-
+    The complete construction and independent statement bridge passed Lean
+    4.35.0-rc2 with pinned Mathlib commit
+    065356127b1dc0016f66b7283ce0ce2c4055aa55. Thirteen final axiom reports
+    contained only propext, Quot.sound, and Classical.choice. No external
+    author endorsement or journal peer review is asserted.
+
+alignment:
+  namespace: "EgyptianPalomar"
+  statements:
+    - source: "Associated manuscript, Theorem 1 and complete six-section construction"
+      lean: "EgyptianPalomar.explicit_counterexample"
+      module: "Solution"
+      status: "proved"
+      note: >-
+        The independent ordinary-list formulation is bridged to
+        Egyptian.explicit_counterexample, using the same constructed real and
+        rational approximation function. Every infinite increasing sequence,
+        finite starting order, and competing positive increasing prefix is covered.
+
+acknowledgements: >-
+  Lean, Mathlib, and their contributors; established work of Erdős, Graham,
+  Kovač, Kovač-Tang, Brattka, and Gherardi. The code's actual license is GNU AGPL
+  version 3 only. project.license records the historical AGPL-3.0 identifier
+  emitted by Palomar's pinned Licensee detector; it is not an or-later grant.
+  Separately distributed paper rights are unaffected by the code license.
