@@ -1,0 +1,12 @@
+{
+  "scope": "stages 0..12 only, at most 60 seconds",
+  "all_13_interval_pairs_exactly_match_original_certificate": true,
+  "elapsed_seconds": 9.198607749999999,
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "combined_source_sha256": "a4226f97e9b0174d1f1002e6402672385414702d211005f8420d048d59e58cea",
+  "construction_source_sha256": "cb95a34d804d0461e9c0ebe038abe833ebe9579a9886f0e8803062af4aee1a06",
+  "main_source_sha256": "710f21ea51b3ed8cd6fbc0bb32eeab0a796b9e80fa53ceb6bacf655ec78f5ce6",
+  "original_certificate_sha256": "d538c1694a880974b4ad3d066d367524cabeb975f00409cb75a958758030db98",
+  "proof_boundary": "Finite execution agrees. The infinite theorem follows from the compiled construction; the accelerated search equality is proved for every valid input."
+}

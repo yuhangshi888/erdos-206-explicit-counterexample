@@ -1,0 +1,16 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "EgyptianPalomar.explicit_counterexample"
+  ],
+  "definition_names": [
+    "EgyptianPalomar.explicitReal",
+    "EgyptianPalomar.approximation"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

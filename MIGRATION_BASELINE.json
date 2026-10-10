@@ -1,0 +1,199 @@
+{
+  "snapshot_date": "2026-10-10",
+  "formalization_copy_count": 22,
+  "copied_or_adapted_files": [
+    {
+      "path": "computation/egyptian_exact_certificate.json",
+      "origin": "egyptian_exact_certificate.json",
+      "treatment": "byte-identical copy",
+      "original_sha256": "d538c1694a880974b4ad3d066d367524cabeb975f00409cb75a958758030db98",
+      "publication_sha256": "d538c1694a880974b4ad3d066d367524cabeb975f00409cb75a958758030db98",
+      "bytes": 20697
+    },
+    {
+      "path": "computation/egyptian_exact_generator.py",
+      "origin": "egyptian_exact_generator.py",
+      "treatment": "byte-identical copy",
+      "original_sha256": "32088b297efbbc512bba84462a6434266f2b2fb2db6e86a62a32d4ae94255234",
+      "publication_sha256": "32088b297efbbc512bba84462a6434266f2b2fb2db6e86a62a32d4ae94255234",
+      "bytes": 8308
+    },
+    {
+      "path": "formalization/EXECUTION_CROSSCHECK.json",
+      "origin": "formalization/EXECUTION_CROSSCHECK.json",
+      "treatment": "byte-identical copy",
+      "original_sha256": "c6170b83311fdf8798c40c539861a9f81cac6abcdbe7a47b90fd99aa9dc57a9d",
+      "publication_sha256": "c6170b83311fdf8798c40c539861a9f81cac6abcdbe7a47b90fd99aa9dc57a9d",
+      "bytes": 569
+    },
+    {
+      "path": "formalization/Egyptian.lean",
+      "origin": "formalization/Egyptian.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "c233bb5faaf1033a44a06150765bc5afbf9f6772e3027e4713c7857795bb6c9c",
+      "publication_sha256": "c233bb5faaf1033a44a06150765bc5afbf9f6772e3027e4713c7857795bb6c9c",
+      "bytes": 21
+    },
+    {
+      "path": "formalization/Egyptian/BadPair.lean",
+      "origin": "formalization/Egyptian/BadPair.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "3ed9a79f0fc5a7ef41f3ebd4636a49a1680771efc9ba05be29ce1f434d51cfa6",
+      "publication_sha256": "3ed9a79f0fc5a7ef41f3ebd4636a49a1680771efc9ba05be29ce1f434d51cfa6",
+      "bytes": 6764
+    },
+    {
+      "path": "formalization/Egyptian/Basic.lean",
+      "origin": "formalization/Egyptian/Basic.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "be0ef51be22318fde90f85a82d120e8cbe25c8b151099503f31e446c33b003aa",
+      "publication_sha256": "be0ef51be22318fde90f85a82d120e8cbe25c8b151099503f31e446c33b003aa",
+      "bytes": 4756
+    },
+    {
+      "path": "formalization/Egyptian/Chains.lean",
+      "origin": "formalization/Egyptian/Chains.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "d6bbf02442cff8c3e94d27ebf614e334833dec7e21f5364e4e7cc175c858a23e",
+      "publication_sha256": "d6bbf02442cff8c3e94d27ebf614e334833dec7e21f5364e4e7cc175c858a23e",
+      "bytes": 3451
+    },
+    {
+      "path": "formalization/Egyptian/Checks.lean",
+      "origin": "formalization/Egyptian/Checks.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "8179828d3138463d46f71bc373b23353a84e67d8162a067f06635b2036a991d9",
+      "publication_sha256": "8179828d3138463d46f71bc373b23353a84e67d8162a067f06635b2036a991d9",
+      "bytes": 1243
+    },
+    {
+      "path": "formalization/Egyptian/Construction.lean",
+      "origin": "formalization/Egyptian/Construction.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "98b702c65b664688b836e6fd3e19fe1dae6f154e4b05f2357cb62ddc4ed8d774",
+      "publication_sha256": "98b702c65b664688b836e6fd3e19fe1dae6f154e4b05f2357cb62ddc4ed8d774",
+      "bytes": 8768
+    },
+    {
+      "path": "formalization/Egyptian/Defeat.lean",
+      "origin": "formalization/Egyptian/Defeat.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "297767e5d808919e0e4dab2f22ab6d50232d387a2b3e7145cee8bbdb301fc82e",
+      "publication_sha256": "297767e5d808919e0e4dab2f22ab6d50232d387a2b3e7145cee8bbdb301fc82e",
+      "bytes": 5563
+    },
+    {
+      "path": "formalization/Egyptian/FastSearch.lean",
+      "origin": "formalization/Egyptian/FastSearch.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "5a2a93f95af73dfaa16b67e03c466d4c49988a9b480239a2e20ce012352ab2a1",
+      "publication_sha256": "5a2a93f95af73dfaa16b67e03c466d4c49988a9b480239a2e20ce012352ab2a1",
+      "bytes": 5380
+    },
+    {
+      "path": "formalization/Egyptian/Greedy.lean",
+      "origin": "formalization/Egyptian/Greedy.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "cff2e6db71f19cfbfc2c321ea646c65e680df66b9c3527e23b524113a0be9fd0",
+      "publication_sha256": "cff2e6db71f19cfbfc2c321ea646c65e680df66b9c3527e23b524113a0be9fd0",
+      "bytes": 14835
+    },
+    {
+      "path": "formalization/Egyptian/Intervals.lean",
+      "origin": "formalization/Egyptian/Intervals.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "10c35753e848c66f621c45ddf62b7b77c72df8610d83bec60b5db1c0fb4915da",
+      "publication_sha256": "10c35753e848c66f621c45ddf62b7b77c72df8610d83bec60b5db1c0fb4915da",
+      "bytes": 10212
+    },
+    {
+      "path": "formalization/Egyptian/Main.lean",
+      "origin": "formalization/Egyptian/Main.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "25d019856925d18eeb56e0c36de37c7cc05d7e8691f38e18828966c3e9bca6a6",
+      "publication_sha256": "25d019856925d18eeb56e0c36de37c7cc05d7e8691f38e18828966c3e9bca6a6",
+      "bytes": 2619
+    },
+    {
+      "path": "formalization/Egyptian/MaxExists.lean",
+      "origin": "formalization/Egyptian/MaxExists.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "e5a3acdf9d02a25553d2e524bcf6e9ec1273e164fa895db883dac4c51c8f1928",
+      "publication_sha256": "e5a3acdf9d02a25553d2e524bcf6e9ec1273e164fa895db883dac4c51c8f1928",
+      "bytes": 5410
+    },
+    {
+      "path": "formalization/Egyptian/PolynomialEnumeration.lean",
+      "origin": "formalization/Egyptian/PolynomialEnumeration.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "784d98b02fcf46e2657736a7fcb97492a02f8754df9c36d975bea8288e03cbe8",
+      "publication_sha256": "784d98b02fcf46e2657736a7fcb97492a02f8754df9c36d975bea8288e03cbe8",
+      "bytes": 11061
+    },
+    {
+      "path": "formalization/Egyptian/PolynomialGrid.lean",
+      "origin": "formalization/Egyptian/PolynomialGrid.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "e7e64bed3a3cf14f5916b814d78b66178be6a8e84cf87e2a01617e9009e1fe77",
+      "publication_sha256": "e7e64bed3a3cf14f5916b814d78b66178be6a8e84cf87e2a01617e9009e1fe77",
+      "bytes": 5094
+    },
+    {
+      "path": "formalization/Egyptian/PrefixEnumeration.lean",
+      "origin": "formalization/Egyptian/PrefixEnumeration.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "155653b1dd817024a71442787f3542bd2ac442c60cce9cd44bf2832634e46cba",
+      "publication_sha256": "155653b1dd817024a71442787f3542bd2ac442c60cce9cd44bf2832634e46cba",
+      "bytes": 1402
+    },
+    {
+      "path": "formalization/Egyptian/PrefixInterval.lean",
+      "origin": "formalization/Egyptian/PrefixInterval.lean",
+      "treatment": "byte-identical copy",
+      "original_sha256": "0383cc0e641776aae596cffddee484be861b9aebf15e4a9a9069e37f7372c4db",
+      "publication_sha256": "0383cc0e641776aae596cffddee484be861b9aebf15e4a9a9069e37f7372c4db",
+      "bytes": 9157
+    },
+    {
+      "path": "formalization/README.md",
+      "origin": "formalization/README.md",
+      "treatment": "byte-identical copy",
+      "original_sha256": "d80c46e692b254c405c83696f1afcc32b7d2be81b3827cf7fff9b48f5dc18a83",
+      "publication_sha256": "d80c46e692b254c405c83696f1afcc32b7d2be81b3827cf7fff9b48f5dc18a83",
+      "bytes": 6698
+    },
+    {
+      "path": "formalization/VERIFICATION_LOG.txt",
+      "origin": "formalization/VERIFICATION_LOG.txt",
+      "treatment": "byte-identical copy",
+      "original_sha256": "433dd82fe2db537e2c689d5130ff28f24e2a80a7bc3c6749712d8b2b94000539",
+      "publication_sha256": "433dd82fe2db537e2c689d5130ff28f24e2a80a7bc3c6749712d8b2b94000539",
+      "bytes": 8021
+    },
+    {
+      "path": "formalization/lake-manifest.json",
+      "origin": "formalization/lake-manifest.json",
+      "treatment": "byte-identical copy",
+      "original_sha256": "43ab664d10cb9c7509674493270a79d8f0f329ad4cda86659931022db571e2df",
+      "publication_sha256": "43ab664d10cb9c7509674493270a79d8f0f329ad4cda86659931022db571e2df",
+      "bytes": 3497
+    },
+    {
+      "path": "formalization/lakefile.toml",
+      "origin": "formalization/lakefile.toml",
+      "treatment": "byte-identical copy",
+      "original_sha256": "9a6119195e0180ad534e3fbe83f6073e4ee441fec200ca2bbf78cf03507ae1b6",
+      "publication_sha256": "9a6119195e0180ad534e3fbe83f6073e4ee441fec200ca2bbf78cf03507ae1b6",
+      "bytes": 217
+    },
+    {
+      "path": "formalization/lean-toolchain",
+      "origin": "formalization/lean-toolchain",
+      "treatment": "byte-identical copy",
+      "original_sha256": "db7bb24b756d745bbde83fe92718b51bd3625dae3701ba0f598d0eedcd3f3028",
+      "publication_sha256": "db7bb24b756d745bbde83fe92718b51bd3625dae3701ba0f598d0eedcd3f3028",
+      "bytes": 25
+    }
+  ],
+  "scope": "Migration baseline only: original source files remain unchanged. Public repository copies may be migrated to a new toolchain and module format, with a new build required."
+}

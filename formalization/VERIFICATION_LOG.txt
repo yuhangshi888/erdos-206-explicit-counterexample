@@ -1,0 +1,91 @@
+Verification date: 2026-10-10
+Lean: leanprover/lean4:v4.35.0-rc2
+Lean compiler commit: 11acb17ec6b07a8f9e9173e6845197929540936b
+Mathlib commit: 065356127b1dc0016f66b7283ce0ce2c4055aa55
+All dependency revisions: lake-manifest.json
+Scope: complete Egyptian construction, independent Challenge statement,
+completed Solution bridge, public interfaces, axioms, and bounded execution.
+
+COMMAND (from formalization/): lake build
+✔ [8947/8950] Built Solution (9.0s)
+⚠ [8949/8950] Built Challenge (9.0s)
+warning: Challenge.lean:51:18: declaration uses `sorry`
+warning: Challenge.lean:58:4: declaration uses `sorry`
+warning: Challenge.lean:65:8: declaration uses `sorry`
+Build completed successfully (8950 jobs).
+
+EXIT_CODE: 0
+ELAPSED_SECONDS: 12.943
+
+Challenge's three warnings are intentional statement/value placeholders.
+They are not used by the completed Solution or Egyptian construction.
+No proof placeholder remains in the completed proof artifacts.
+
+COMMAND (from formalization/): lake env lean Egyptian/Checks.lean
+'Egyptian.explicit_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EgyptianPalomar.explicit_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.explicitReal_transcendental' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.explicitReal_not_eventuallyGreedy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.explicitReal_no_eventually_optimal_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.approximation_certified' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.PolynomialEnumeration.polyAtQ_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.PrefixInterval.defeatQ_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.least_sequence_crosses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.eventuallyGreedy_iff_sequences' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.Rn_attained' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.bestUnder_iff_sum_eq_Rn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Egyptian.FastSearch.defeatFastQ_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+[]
+[1, 3, 4]
+[[-1], [1], [-2], [2], [0, -1], [0, 1], [-3], [3]]
+(1 / 4, 1 / 3)
+(172670000189912899 / 592011447984990600, 57556666729970983 / 197337149328330200)
+43167500047478231 / 148002861996247650
+(17737877356732451399555751958999481991709454527857411676761533092956872749170014572553298132445782908275201643136094138946485821995465376504501540092165653 /
+    60815581436206007959678042100409134058924254379054779299631024931737441155841743944499678194356808101274148956680322874216585591808450900632655291066098200,
+  2956312892788741899925958659833246998618242421309568612793588848826145458195002428758883022074297151379200273856015689824414303665910935618615878232025413 /
+    10135930239367667993279673683401522343154042396509129883271837488622906859306957324083279699059468016879024826113387145702764265301408483438775881844349700)
+35475754713464902799111503917998963983418909055714823353523066185913745498340029145106596264891565816550403286272188277892971643990930990216196809484318131 /
+  121631162872412015919356084200818268117848508758109558599262049863474882311683487888999356388713616202548297913360645748433171183616901801265310582132196400
+
+EXIT_CODE: 0
+ELAPSED_SECONDS: 9.269
+
+All 13 actual axiom reports (12 construction/interface results and the completed
+Palomar theorem) contain only propext, Classical.choice, and Quot.sound.
+
+Source scan of Egyptian/*.lean, Egyptian.lean, and Solution.lean:
+no sorry/admit/custom axiom/unsafe/native_decide/implemented_by found.
+Every ordinary Lean source has module on its first line.
+
+Independent exact execution crosscheck:
+{
+  "scope": "stages 0..12 only, at most 60 seconds",
+  "all_13_interval_pairs_exactly_match_original_certificate": true,
+  "elapsed_seconds": 9.198607749999999,
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "combined_source_sha256": "a4226f97e9b0174d1f1002e6402672385414702d211005f8420d048d59e58cea",
+  "construction_source_sha256": "cb95a34d804d0461e9c0ebe038abe833ebe9579a9886f0e8803062af4aee1a06",
+  "main_source_sha256": "710f21ea51b3ed8cd6fbc0bb32eeab0a796b9e80fa53ceb6bacf655ec78f5ce6",
+  "original_certificate_sha256": "d538c1694a880974b4ad3d066d367524cabeb975f00409cb75a958758030db98",
+  "proof_boundary": "Finite execution agrees. The infinite theorem follows from the compiled construction; the accelerated search equality is proved for every valid input."
+}
+
+Mathematical boundary:
+Finite execution verifies the stated sample values. The infinite theorem is
+justified by the compiled fully instantiated proof, not by finite execution.
+A separate Partrec/Turing-machine encoding and a complexity estimate are not
+claimed. Standard classical choice is confined to the proof and real-limit layer.
+
+Migration compatibility changes:
+module headers, public imports/exposure, meta imports for runtime checks;
+Polynomial now wraps AddMonoidAlgebra, with the same coefficient vector;
+explicit integer/rational cast and step-denominator rewrites;
+renamed theorem aliases; typed list-map input and a proved sum bridge in Solution.
+The height/degree/lex enumeration, binary prefix stream, cap minimum, least
+indices, finite grid, radius, and rational recursion are unchanged.
+
+The original Lean 4.28.0 development remains unchanged outside this publication
+copy. MIGRATION_BASELINE.json records its original file hashes.
+The independent semantic review found no change to the constructed number.

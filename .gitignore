@@ -1,0 +1,32 @@
+# Internal release metadata
+/PUBLICATION_PENDING.local.md
+
+# Lean dependency checkouts and build artifacts
+.lake/
+**/.lake/
+*.olean
+*.ilean
+*.o
+
+# Reproduced finite examples
+/reproduced_certificate.json
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Local editor and operating-system files
+.DS_Store
+*~
+*.swp
+.vscode/
+.idea/

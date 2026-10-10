@@ -1,0 +1,214 @@
+{
+  "review_type": "independent static semantic migration audit",
+  "reviewed_at_utc": "2026-10-10T13:07:11.071936+00:00",
+  "result": "No unexplained mathematical or construction-definition changes found in the recorded snapshot.",
+  "scope": "15 Egyptian modules, Challenge, Solution, and comparator configuration; original sources were not edited.",
+  "original_toolchain": "leanprover/lean4:v4.28.0",
+  "migrated_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "build_boundary": "No compilation or execution was rerun by this review. Compilation, comparator execution, and axiom checks are separate obligations.",
+  "ignored_wrapping": [
+    "module declaration",
+    "public import visibility",
+    "exposed public section",
+    "copyright headers",
+    "Checks-only public meta imports for evaluation"
+  ],
+  "change_summary": {
+    "wrapper_only_modules": 8,
+    "adapted_modules": 7,
+    "nonwrapper_hunks": 12,
+    "construction_definition_repairs": 2,
+    "proof_only_repairs": 9,
+    "verification_only_hunks": 1
+  },
+  "construction_definition_repairs": [
+    {
+      "file": "PolynomialEnumeration.lean",
+      "name": "ofCoeffs",
+      "change": "one additional AddMonoidAlgebra structure constructor",
+      "reason": "In the old Mathlib representation AddMonoidAlgebra was a Finsupp type alias; the new representation is a structure with a coeff Finsupp field. The original v.toFinsupp data is unchanged.",
+      "preserved_witness": "coeff_ofCoeffs is still proved by rfl: every coefficient equals v.getD i 0."
+    },
+    {
+      "file": "PolynomialEnumeration.lean",
+      "name": "rationalize",
+      "change": "one additional AddMonoidAlgebra structure constructor",
+      "reason": "The same ascending coefficient list, integer-to-rational map and toFinsupp value are retained.",
+      "preserved_witness": "rationalize_eq_map and rationalize_natDegree are unchanged mathematical statements with unchanged proof bodies."
+    }
+  ],
+  "proof_repairs": [
+    "FastSearch: unfold baseIndexQ explicitly when simplifying an existing specification.",
+    "Intervals: explicit algebraMap_int_eq and Rat.coe_castHom simplifications.",
+    "MaxExists: setOfPred_minimal_antichain replaces the deprecated alias; upstream confirms identical proposition.",
+    "PrefixEnumeration: bitIndices_sum_map_two_pow has exactly the same sorted-list binary expansion proposition as the old theorem name.",
+    "PrefixInterval: explicit next_last and replacement of conditional simplification names; all caps and interval definitions are unchanged."
+  ],
+  "preserved_construction": [
+    "prefixAt is bitIndices mapped by Nat.succ; prefixAt 0 is the empty prefix; prefixCode and its surjectivity are unchanged.",
+    "Polynomial boxes, lexicographic coefficient vectors, degree/height filters, concatenation order, leastHeight Nat.find and polyAt indexing are unchanged.",
+    "The rational least denominator remains max(M+1, floor((c-q)^(-1))+1), including strict integer-boundary handling.",
+    "crossingTimeQ remains the first successful Nat.find; recorded capsFoldQ starts from b and folds the same skipped-step predecessor caps.",
+    "badIndexQ remains the least successful index; the two-candidate fast routine and its equality theorem are unchanged.",
+    "The finite nonroot grid and leastGood Nat.find are unchanged.",
+    "The same four-way rational radius and narrowQ endpoints are retained.",
+    "The initial interval is [1/4,1/3]; stage n+1 refines stage n using prefixAt n, polynomial P n and radius index n+1.",
+    "Main.explicitReal remains the unique nested-interval limit for polyAtQ; approximation remains the stage-n midpoint. No replacement by an unspecified existential counterexample was introduced."
+  ],
+  "challenge_interface": {
+    "unitSum_and_eventuallyOptimal_match_solution_verbatim": true,
+    "ordinary_predicate_has_no_holes": true,
+    "quantifiers": "Existential positive StrictMono infinite sequence and arbitrary n0, all n >= n0 including n0=0, strict feasibility and all same-length positive Pairwise(<) competing lists, with <= allowing tied maxima.",
+    "main_correspondence": "The ordinary predicate corresponds exactly to DenominatorChain and BestUnder. Solution constructs that chain from the list predicate; Main also proves the attained-Rn formulation using Rn_attained and bestUnder_iff_sum_eq_Rn.",
+    "actual_implementation_aliases": [
+      "explicitReal := Egyptian.explicitReal",
+      "approximation := Egyptian.approximation"
+    ],
+    "challenge_holes": "Two definition-value interfaces and one theorem proof placeholder. These are not proofs. Solution fills both values with the actual original construction and proves the theorem.",
+    "comparator_definition_names": [
+      "EgyptianPalomar.explicitReal",
+      "EgyptianPalomar.approximation"
+    ],
+    "comparator_theorem_names": [
+      "EgyptianPalomar.explicit_counterexample"
+    ],
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "solution_sorry_count": 0,
+    "egyptian_sources_sorry_count": 0,
+    "challenge_sha256": "54789dc1748949a9f77af59691d9a4697564978dd5178c95ca026e21a47ee30f",
+    "solution_sha256": "a74c6e0f6db4c3123a23f39afb9604b389aab46dd95959f8623bb33982442047",
+    "comparator_sha256": "6c9623126bbdd12f91f036bd2a66d91c3daf23aef418e40df940687821e17cf6"
+  },
+  "original_hashes_match_migration_baseline": true,
+  "snapshot_recheck_stable": true,
+  "files": [
+    {
+      "file": "BadPair.lean",
+      "original_sha256": "3ed9a79f0fc5a7ef41f3ebd4636a49a1680771efc9ba05be29ce1f434d51cfa6",
+      "migrated_sha256": "906cb44ea30dee6a2ceb99edc4ae231fc4f3e6f72f12e59b40c62a7e487aaa0d",
+      "normalized_equal": true,
+      "hunk_count": 0,
+      "normalized_diff": ""
+    },
+    {
+      "file": "Basic.lean",
+      "original_sha256": "be0ef51be22318fde90f85a82d120e8cbe25c8b151099503f31e446c33b003aa",
+      "migrated_sha256": "f6e06da9b6862f5ea5ecb99b69218a8fdb5a2814b1bc68253f32c2469785b398",
+      "normalized_equal": true,
+      "hunk_count": 0,
+      "normalized_diff": ""
+    },
+    {
+      "file": "Chains.lean",
+      "original_sha256": "d6bbf02442cff8c3e94d27ebf614e334833dec7e21f5364e4e7cc175c858a23e",
+      "migrated_sha256": "c20f2e3291117372f637b90b94f36fc77ea87e84a1d652a1c56dd9b993c476f2",
+      "normalized_equal": true,
+      "hunk_count": 0,
+      "normalized_diff": ""
+    },
+    {
+      "file": "Checks.lean",
+      "original_sha256": "8179828d3138463d46f71bc373b23353a84e67d8162a067f06635b2036a991d9",
+      "migrated_sha256": "7182b207ced288ba50e1474c18093221c39da061d73880d8c24d82362299df18",
+      "normalized_equal": false,
+      "hunk_count": 1,
+      "normalized_diff": "--- \n+++ \n@@ -1,5 +1,6 @@\n import Egyptian.Main\n-\n+import Solution\n #print axioms Egyptian.explicit_counterexample\n+#print axioms EgyptianPalomar.explicit_counterexample\n #print axioms Egyptian.explicitReal_transcendental\n #print axioms Egyptian.explicitReal_not_eventuallyGreedy\n"
+    },
+    {
+      "file": "Construction.lean",
+      "original_sha256": "98b702c65b664688b836e6fd3e19fe1dae6f154e4b05f2357cb62ddc4ed8d774",
+      "migrated_sha256": "cb95a34d804d0461e9c0ebe038abe833ebe9579a9886f0e8803062af4aee1a06",
+      "normalized_equal": true,
+      "hunk_count": 0,
+      "normalized_diff": ""
+    },
+    {
+      "file": "Defeat.lean",
+      "original_sha256": "297767e5d808919e0e4dab2f22ab6d50232d387a2b3e7145cee8bbdb301fc82e",
+      "migrated_sha256": "44b1e387b39059b8cfe8409fc865e0609d290e68102a74d4894de93c656f62e5",
+      "normalized_equal": true,
+      "hunk_count": 0,
+      "normalized_diff": ""
+    },
+    {
+      "file": "FastSearch.lean",
+      "original_sha256": "5a2a93f95af73dfaa16b67e03c466d4c49988a9b480239a2e20ce012352ab2a1",
+      "migrated_sha256": "fd6293174dc601b0d472012346f023b9c78467b7ec9b113c946c238a952b9321",
+      "normalized_equal": false,
+      "hunk_count": 1,
+      "normalized_diff": "--- \n+++ \n@@ -26,5 +26,5 @@\n   have h := greedyDenomQ_least hε (max 2 M)\n   have hbound : max 2 M < baseIndexQ M ε := h.1.1\n-  have hsmall : unitQ (baseIndexQ M ε) < ε := by simpa only [zero_add] using h.1.2\n+  have hsmall : unitQ (baseIndexQ M ε) < ε := by simpa only [baseIndexQ, zero_add] using h.1.2\n   refine ⟨?_, ?_, hsmall⟩\n   · have h2 : 2 ≤ max 2 M := le_max_left _ _\n"
+    },
+    {
+      "file": "Greedy.lean",
+      "original_sha256": "cff2e6db71f19cfbfc2c321ea646c65e680df66b9c3527e23b524113a0be9fd0",
+      "migrated_sha256": "15bf49d59d29d3cb6df67cc51456e9b29dce2d188ca7ec8bee42b8f0144e28d7",
+      "normalized_equal": true,
+      "hunk_count": 0,
+      "normalized_diff": ""
+    },
+    {
+      "file": "Intervals.lean",
+      "original_sha256": "10c35753e848c66f621c45ddf62b7b77c72df8610d83bec60b5db1c0fb4915da",
+      "migrated_sha256": "05eab52ee8ece20b4f2773f709863a38f593608d80386445dfc84f89315e10d0",
+      "normalized_equal": false,
+      "hunk_count": 2,
+      "normalized_diff": "--- \n+++ \n@@ -131,5 +131,5 @@\n   by_contra hne\n   apply h p hne\n-  simpa only [Polynomial.aeval_def, Polynomial.eval₂_eq_eval_map] using hp\n+  simpa only [Polynomial.aeval_def, Polynomial.eval₂_eq_eval_map, algebraMap_int_eq] using hp\n \n /-- Rational version of the coefficient bound; this is executable. -/\n@@ -150,5 +150,5 @@\n @[simp] theorem cast_evalQ (p : Polynomial ℚ) (z : ℚ) :\n     (p.map (Rat.castHom ℝ)).eval (z : ℝ) = ((p.eval z : ℚ) : ℝ) := by\n-  simpa only [Polynomial.eval₂_eq_eval_map] using\n+  simpa only [Polynomial.eval₂_eq_eval_map, Rat.coe_castHom] using\n     (Polynomial.eval₂_at_apply (Rat.castHom ℝ) z (p := p))\n \n"
+    },
+    {
+      "file": "Main.lean",
+      "original_sha256": "25d019856925d18eeb56e0c36de37c7cc05d7e8691f38e18828966c3e9bca6a6",
+      "migrated_sha256": "710f21ea51b3ed8cd6fbc0bb32eeab0a796b9e80fa53ceb6bacf655ec78f5ce6",
+      "normalized_equal": true,
+      "hunk_count": 0,
+      "normalized_diff": ""
+    },
+    {
+      "file": "MaxExists.lean",
+      "original_sha256": "e5a3acdf9d02a25553d2e524bcf6e9ec1273e164fa895db883dac4c51c8f1928",
+      "migrated_sha256": "e7e2093e3797c07027617a364be224fe5313be059983a1c1d328d19b854fd2e2",
+      "normalized_equal": false,
+      "hunk_count": 1,
+      "normalized_diff": "--- \n+++ \n@@ -12,5 +12,5 @@\n   have hs : s.IsPWO := Set.isPWO_of_wellQuasiOrderedLE s\n   have hfinite : minima.Finite :=\n-    WellQuasiOrderedLE.finite_of_isAntichain (setOf_minimal_antichain (· ∈ s))\n+    WellQuasiOrderedLE.finite_of_isAntichain (setOfPred_minimal_antichain (· ∈ s))\n   obtain ⟨a₀, ha₀⟩ := hs.exists_minimal hne\n   obtain ⟨a, ha, hmax⟩ := Set.exists_max_image minima f hfinite ⟨a₀, ha₀⟩\n"
+    },
+    {
+      "file": "PolynomialEnumeration.lean",
+      "original_sha256": "784d98b02fcf46e2657736a7fcb97492a02f8754df9c36d975bea8288e03cbe8",
+      "migrated_sha256": "06a552c3389f825bfd3bc1482688da24f792d9ccddcaf62ee1b6ed635fc76fa6",
+      "normalized_equal": false,
+      "hunk_count": 2,
+      "normalized_diff": "--- \n+++ \n@@ -67,5 +67,5 @@\n \n /-- Exact ascending coefficient list to polynomial, using computable Finsupp. -/\n-def ofCoeffs (v : List ℤ) : Polynomial ℤ := ⟨v.toFinsupp⟩\n+def ofCoeffs (v : List ℤ) : Polynomial ℤ := ⟨⟨v.toFinsupp⟩⟩\n \n @[simp] theorem coeff_ofCoeffs (v : List ℤ) (i : ℕ) :\n@@ -250,5 +250,5 @@\n itself uses the abstract polynomial ring operations, so is avoided in execution. -/\n def rationalize (p : Polynomial ℤ) : Polynomial ℚ :=\n-  ⟨((coeffs p).map (fun (a : ℤ) => (a : ℚ))).toFinsupp⟩\n+  ⟨⟨((coeffs p).map (fun (a : ℤ) => (a : ℚ))).toFinsupp⟩⟩\n \n theorem rationalize_eq_map (p : Polynomial ℤ) :\n"
+    },
+    {
+      "file": "PolynomialGrid.lean",
+      "original_sha256": "e7e64bed3a3cf14f5916b814d78b66178be6a8e84cf87e2a01617e9009e1fe77",
+      "migrated_sha256": "9d19105d795a48866918afd990ecb4589489fb7afe82ae16d8316f7eb36e45b5",
+      "normalized_equal": true,
+      "hunk_count": 0,
+      "normalized_diff": ""
+    },
+    {
+      "file": "PrefixEnumeration.lean",
+      "original_sha256": "155653b1dd817024a71442787f3542bd2ac442c60cce9cd44bf2832634e46cba",
+      "migrated_sha256": "aac5e5f1c492d0ced5d51ec8084c4e515e7042d1a609d0543b038fb0e34b8545",
+      "normalized_equal": false,
+      "hunk_count": 1,
+      "normalized_diff": "--- \n+++ \n@@ -28,5 +28,5 @@\n     rw [Nat.pred_eq_sub_one, Nat.pred_eq_sub_one]\n     omega\n-  have hbits := Nat.bitIndices_twoPowsum hsort\n+  have hbits := Nat.bitIndices_sum_map_two_pow hsort\n   have hden : (prefixAt (prefixCode S)).denoms = S.denoms := by\n     dsimp [prefixAt, prefixCode]\n"
+    },
+    {
+      "file": "PrefixInterval.lean",
+      "original_sha256": "0383cc0e641776aae596cffddee484be861b9aebf15e4a9a9069e37f7372c4db",
+      "migrated_sha256": "d0d014956fbea4f388b51e5ef75dbcbfa221088befc6272f8f4685508d1b127c",
+      "normalized_equal": false,
+      "hunk_count": 4,
+      "normalized_diff": "--- \n+++ \n@@ -35,5 +35,5 @@\n   have hl : IsLeastAllowed (c : ℝ) (greedyIterQ c S n).sum\n       (greedyIterQ c S n).last (stepDenomQ c S n) := by\n-    simpa using greedyIterQ_least S hq n\n+    simpa only [next_last] using greedyIterQ_least S hq n\n   have hr := least_allowed_cap hl hs\n   apply (Rat.cast_le (K := ℝ)).mp\n@@ -66,5 +66,5 @@\n     capsFoldQ b c S N ≤ stepCapQ c S n := by\n   have hstep : capsFoldQ b c S (n + 1) ≤ stepCapQ c S n := by\n-    rw [capsFoldQ, if_pos hs]\n+    rw [capsFoldQ, ite_eq_left hs]\n     exact min_le_right _ _\n   exact le_trans (capsFoldQ_antitone b c S (by omega : n + 1 ≤ N)) hstep\n@@ -191,5 +191,5 @@\n       ((defeatQ a b S h0 hab hb1).2 : ℝ) → ¬ HasBestExtension x S := by\n   by_cases h : a < S.sumQ\n-  · simp only [defeatQ, dif_pos h]\n+  · simp only [defeatQ, dite_eq_left h]\n     refine ⟨le_rfl, lt_min hab h, min_le_left _ _, ?_⟩\n     intro x hx hext\n@@ -202,5 +202,5 @@\n     have hb : BestUnder x S := by simpa only [hF0] using hbest 0\n     linarith [hb.1]\n-  · simpa only [defeatQ, dif_neg h] using\n+  · simpa only [defeatQ, dite_eq_right h] using\n       intervalOfCutQ_spec (makeCutQ a b S hab (le_of_not_gt h))\n \n"
+    }
+  ],
+  "follow_up": "A later change to any recorded file requires the corresponding delta to be reviewed; this report does not substitute for the migrated build and comparator run.",
+  "verification_only_changes": [
+    "Checks additionally imports Solution and prints the axioms of EgyptianPalomar.explicit_counterexample. This is a diagnostic extension, with no new mathematical definitions or assumptions."
+  ]
+}
