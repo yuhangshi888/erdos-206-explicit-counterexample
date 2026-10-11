@@ -24,9 +24,7 @@ The complete construction and publication bridge have passed the full build unde
 For a positive real number $x$, let
 
 ```math
-R_n(x)=\max\left\{\sum_{k=0}^{n-1}\frac1{m_k}:
-0<m_0<\cdots<m_{n-1},\quad
-\sum_{k=0}^{n-1}\frac1{m_k}<x\right\},
+\begin{gathered} R_n(x)=\max\bigl\lbrace\sum_{k=0}^{n-1}\frac1{m_k}:\\ 0\lt m_0\lt\cdots\lt m_{n-1},\quad\sum_{k=0}^{n-1}\frac1{m_k}\lt x\bigr\rbrace. \end{gathered}
 ```
 
 where the denominators are integers, and $R_0(x)=0$. Existence of each maximum is proved in [`MaxExists.lean`](formalization/Egyptian/MaxExists.lean).
@@ -34,15 +32,13 @@ where the denominators are integers, and $R_0(x)=0$. Existence of each maximum i
 The construction defines a particular real $x$ and a total rational algorithm $q_n$ such that
 
 ```math
-\frac14<x<\frac13,\qquad x\text{ is transcendental over }\mathbb Z,
-\qquad |x-q_n|\le 2^{-n-1}\quad(n\ge0).
+\begin{gathered} \frac14\lt x\lt\frac13,\quad x\text{ is transcendental over }\mathbb Z,\\ |x-q_n|\le 2^{-n-1}\quad(n\ge0). \end{gathered}
 ```
 
 For this same $x$, there do **not** exist a strictly increasing infinite sequence of positive integer denominators $(m_k)_{k\ge0}$ and an index $n_0$ such that
 
 ```math
-\sum_{k=0}^{n-1}\frac1{m_k}=R_n(x)
-\qquad\text{for every }n\ge n_0.
+\sum_{k=0}^{n-1}\frac1{m_k}=R_n(x)\qquad\text{for every }n\ge n_0.
 ```
 
 This quantifies over all candidate sequences and all tied best representations. It uses strict underapproximation and distinct denominators. The conclusion is formalized directly in the original maximum-value notation by `Egyptian.explicitReal_no_eventually_optimal_sequence`.
