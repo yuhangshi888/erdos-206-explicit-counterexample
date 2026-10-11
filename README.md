@@ -1,12 +1,23 @@
 # An explicit computable counterexample for Erdős Problem #206
 
+[![Paper DOI](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.23283007-blue)](https://doi.org/10.5281/zenodo.23283007)
+[![Palomar registration](https://img.shields.io/badge/Palomar-registered%20v1-brightgreen)](https://palomar-registry.org/entry.html?id=PALOMAR-2026-10-11-000014&version=1)
+
 This repository contains a Lean 4 formalization of a deterministic construction of a transcendental real number whose best Egyptian underapproximations with strictly increasing denominators are not eventually greedy. The main result is the fully instantiated theorem [`Egyptian.explicit_counterexample`](formalization/Egyptian/Main.lean), together with an executable rational approximation algorithm and a proved error bound.
 
-Author: [Yuhang Shi](https://orcid.org/0009-0006-3180-4767), Zhengzhou University. This code repository contains the formalization and exact finite illustration. The paper is distributed separately on Zenodo under an all-rights-reserved notice. The associated paper DOI is [10.5281/zenodo.23283007](https://doi.org/10.5281/zenodo.23283007).
+| Resource | Link |
+| --- | --- |
+| Paper on Zenodo | [10.5281/zenodo.23283007](https://doi.org/10.5281/zenodo.23283007) |
+| Registered formalization | [PALOMAR-2026-10-11-000014 · version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-10-11-000014&version=1) |
+| Exact registered source | [`b0c255255c1b8ba45fd0ab6c693ecce747fd602f`](https://github.com/yuhangshi888/erdos-206-explicit-counterexample/tree/b0c255255c1b8ba45fd0ab6c693ecce747fd602f/formalization) |
+| Mechanical verification | [Passed: Lean, nanoda and con-ron](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/38071556700) |
+| Preserved proof source | [Palomar Archive copy](https://github.com/PalomarArchive/yuhangshi888--erdos-206-explicit-counterexample--385ee6dc63f2/tree/b0c255255c1b8ba45fd0ab6c693ecce747fd602f/formalization) |
+
+Author: [Yuhang Shi](https://orcid.org/0009-0006-3180-4767), Zhengzhou University. This code repository contains the formalization and exact finite illustration. The paper is distributed separately on Zenodo under an all-rights-reserved notice.
+
+**Palomar registration completed on 11 October 2026.** Version 1 records the exact source commit linked above. Its archived mechanical report, review and source-preservation receipt are available from the registration page. Later documentation updates to this repository do not alter that registered snapshot.
 
 The complete construction and publication bridge have passed the full build under Lean 4.35.0-rc2 and Mathlib commit `065356127b1dc0016f66b7283ce0ce2c4055aa55`. The final axiom and runtime checks also passed.
-
-Registry registration has not been completed.
 
 ## Exact theorem
 
@@ -27,7 +38,7 @@ $$
 \qquad |x-q_n|\le 2^{-n-1}\quad(n\ge0).
 $$
 
-For this same $x$, there is **no** strictly increasing infinite sequence of positive integer denominators $(m_k)_{k\ge0}$ and no $n_0$ for which
+For this same $x$, there do **not** exist a strictly increasing infinite sequence of positive integer denominators $(m_k)_{k\ge0}$ and an index $n_0$ such that
 
 $$
 \sum_{k=0}^{n-1}\frac1{m_k}=R_n(x)
